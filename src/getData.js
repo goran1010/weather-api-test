@@ -1,13 +1,17 @@
 import getGif from "./getGif";
+import writeText from "./writeText";
+
+export let tempInC;
+export let tempInF;
+export const result = document.querySelector(`.result`);
+export let input;
+
+const container = document.querySelector(`.container`);
+const indicator = document.querySelector(`.indicator`);
 
 export default async function getData() {
-  const container = document.querySelector(`.container`);
-  const indicator = document.querySelector(`.indicator`);
-  const input = document.querySelector(`input`).value;
-  const result = document.querySelector(`.result`);
-  const unit = document.querySelector(`select`).value;
-
   try {
+    input = document.querySelector(`input`).value;
     indicator.textContent = `Waiting for response`;
 
     const response = await fetch(
@@ -24,14 +28,11 @@ export default async function getData() {
     }
     getGif(data.currentConditions.conditions);
     indicator.textContent = `Success!`;
-    let capitalizedInput = input.charAt(0).toUpperCase() + input.slice(1);
 
-    if (unit === "C") {
-      result.textContent = ` It is currently ${data.currentConditions.temp}\u00B0 C in ${capitalizedInput}`;
-    } else {
-      let F = Math.floor(data.currentConditions.temp * (9 / 5) + 32);
-      result.textContent = ` It is currently ${F}\u00B0 F in ${capitalizedInput}`;
-    }
+    tempInC = data.currentConditions.temp;
+    tempInF = Math.floor(data.currentConditions.temp * (9 / 5) + 32);
+
+    writeText();
   } catch (error) {
     result.textContent = ``;
     indicator.textContent = `Failure! Error - ${error}`;
