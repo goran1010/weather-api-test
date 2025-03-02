@@ -8,3 +8,41 @@
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
 }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+.input > * {
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+input {
+  border: 2px solid black;
+}
+button {
+  color: white;
+  background-color: blue;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+}
+.container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 2rem;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
