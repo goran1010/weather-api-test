@@ -13,10 +13,10 @@ Built only using vanilla HTML, CSS and JavaScript.
 
 ```bash
 # Clone the repository
-git clone https://github.com/goran1010/template-webpack.git
+git clone git@github.com:goran1010/weather-api-test.git
 
 # Navigate to project directory
-cd template-webpack
+cd weather-api-test
 
 # Install dependencies
 npm install
