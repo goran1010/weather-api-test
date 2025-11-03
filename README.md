@@ -1,6 +1,6 @@
 # Weather app
 
-A very simple weather app designed to fetch from weather from `visualcrossing.com`.
+A very simple weather app designed to fetch weather from `visualcrossing.com`.
 
 Built only using vanilla HTML, CSS and JavaScript.
 
